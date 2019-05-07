@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Setting owner" >> /var/vcap/jobs/mock_secret_backend/packages/mock_secret_backend/test.log
+sudo chown vcap:vcap /var/vcap/jobs/mock_secret_backend/packages/mock_secret_backend/mock_secret_backend.py 2>&1 >> /var/vcap/jobs/mock_secret_backend/packages/mock_secret_backend/test.log

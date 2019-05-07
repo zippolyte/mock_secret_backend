@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -e -x
+
+mkdir -p $BOSH_INSTALL_TARGET
+cp mock_secret_backend.py $BOSH_INSTALL_TARGET
+echo `whoami` > $BOSH_INSTALL_TARGET/test.log
+chmod 0500 $BOSH_INSTALL_TARGET/mock_secret_backend.py
+chown -Rv vcap:vcap $BOSH_INSTALL_TARGET/mock_secret_backend.py >> $BOSH_INSTALL_TARGET/test.log 2>&1
+
+set +e +x
